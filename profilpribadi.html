@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsani Ade Saputra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        nav {
+            background-color: rgba(0,0,0,0.8);
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        nav button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        nav button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        nav button:hover::before {
+            left: 100%;
+        }
+        nav button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        nav button i {
+            margin-right: 8px;
+        }
+        .content {
+            display: none;
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-in-out;
+            flex: 1;
+        }
+        .content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #e0f7fa;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #f0f0f0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 3px solid #4ecdc4;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-user-circle"></i> Tsani Ade Saputra</h1>
+    </header>
+    
+    <nav>
+        <button onclick="showSection('home')"><i class="fas fa-home"></i> HOME</button>
+        <button onclick="showSection('pendidikan')"><i class="fas fa-graduation-cap"></i> PENDIDIKAN</button>
+        <button onclick="showSection('jadwal')"><i class="fas fa-calendar-alt"></i> JADWAL KULIAH</button>
+        <button onclick="showSection('aktivitas')"><i class="fas fa-users"></i> AKTIVITAS</button>
+        <button onclick="showSection('tambahan')"><i class="fas fa-info-circle"></i> INFORMASI TAMBAHAN</button>
+    </nav>
+    
+    <div id="home" class="content active">
+        <h2>HOME</h2>
+        <img src="profil.jpg" alt="belum ada foto profil" class="profile-img">
+        <p>Informasi sekilas tentang diri saya: Saya Tsani Ade Saputra, lahir di Banyumas pada 23 Agustus 2006. Saya adalah mahasiswa Sistem Informasi di Universitas Amikom Purwokerto. Hobby saya adalah Sepak bola, dan saya tertarik dengan Menjelajahi alam.</p>
+    </div>
+    
+    <div id="pendidikan" class="content">
+        <h2>PENDIDIKAN</h2>
+        <ul>
+            <li><strong>MI:</strong> MI Ma'arif NU 1 Langgong sari, 2012 - 2018</li>
+            <li><strong>SMP:</strong> Mts Ma'arif NU 1 Cilongok, 2018 - 2021</li>
+            <li><strong>SMA:</strong> SMK IT Ma'arif NU Karang lewas, 2021 - 2024</li>
+            <li><strong>Perguruan Tinggi:</strong> Universitas Amikom Purwokerto, Sistem Informasi, 2024 - Sekarang</li>
+        </ul>
+        <h3>Dosen Pembimbing</h3>
+        <ul>
+            <li>Retno Waluyo,S.kom.,M.MSI, 2024 - Sekarang, Sangat baik</li>
+        </ul>
+    </div>
+    
+    <div id="jadwal" class="content">
+        <h2>JADWAL KULIAH</h2>
+        <table>
+            <tr>
+                <th>Hari</th>
+                <th>Waktu</th>
+                <th>Mata Kuliah</th>
+                <th>Ruang</th>
+            </tr>
+            <tr>
+                <td>Senin</td>
+                <td>08:50 - 12:20</td>
+                <td>E-Bussines Technology</td>
+                <td>2.4</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td>08:50 - 12:20</td>
+                <td>Manajemen Proyek Teknologi Informasi dan Komunikasi</td>
+                <td>3.7</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td>12:30 - 16:00</td>
+                <td>Pemrograman Web</td>
+                <td>3.6 / Lab 6</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>08:50 - 14:10</td>
+                <td>Bahasa Inggris, Interaksi Manusia dan Komputer</td>
+                <td>3.6 / 3.7</td>
+            </tr>
+            <tr>
+                <td>Kamis</td>
+                <td>12:30 - 16:00</td>
+                <td>Pemrograman Berorientasi Objek</td>
+                <td>3.5 / Lab 6</td>
+            </tr>
+            <tr>
+                <td>Jum'at</td>
+                <td>12:30 - 16:00</td>
+                <td>E-Bussines Concept dan Desaign</td>
+                <td>2.2</td>
+            </tr>
+            <!-- Tambahkan baris sesuai jadwal Anda -->
+        </table>
+    </div>
+    
+    <div id="aktivitas" class="content">
+        <h2>AKTIVITAS</h2>
+        <h3>Pengalaman Organisasi Selama Kuliah</h3>
+        <ul>
+            <li><strong>Panitia Technofest 2025:</strong> Jabatan Anggota, 2025. Kontribusi: Keamanan Acara</li>
+            <li><strong>Panitia Coppa 2025:</strong> Jabatan Anggota, 2025. Kontribusi: Anggota perlengkapan</li>
+        </ul>
+        <h3>Aktivitas di Luar Kuliah</h3>
+        <ul>
+            <li>Panitia Coppa 2025, 2025</li>
+        </ul>
+    </div>
+    
+    <div id="tambahan" class="content">
+        <h2>INFORMASI TAMBAHAN</h2>
+        <p><i class="fas fa-envelope"></i> Kontak: Email tsaniadesaputra@gmail.com, Telepon +62 852-2529-2680.</p>
+        <p><i class="fas fa-tools"></i> Skill: Sedanng fokus mendalami bahasa pemrrograman HTML, CSS, JavaScript, PHP, dan Database.</p>
+        <p><i class="fas fa-instagram icon"></i> Instagram: @h.yydeee.</p>
+        <!-- Tambahkan galeri atau link sosial media untuk nilai tambah -->
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Tsani Ade Saputra. Mahasiswa Universitas Amikom Purwokerto Prodi Sistem Informasi</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Tampilkan konten yang dipilih
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
